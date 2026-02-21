@@ -23,19 +23,19 @@
     --message-font: 'MOSCOW2024';
 }
 
-.lancer-communicator-dialog .lcm-form-group {
+.rpg_communications-overhaul-dialog .lcm-form-group {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
 }
 
-.lancer-communicator-dialog label {
+.rpg_communications-overhaul-dialog label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.lancer-communicator-dialog input[type="text"],
-.lancer-communicator-dialog textarea {
+.rpg_communications-overhaul-dialog input[type="text"],
+.rpg_communications-overhaul-dialog textarea {
     width: 100%;
     padding: 5px;
     border-radius: 4px;
@@ -44,13 +44,13 @@
     overflow-y: auto;
 }
 
-.lancer-communicator-dialog .lcm-input-group {
+.rpg_communications-overhaul-dialog .lcm-input-group {
     display: flex;
     align-items: center;
     gap: 5px; 
 }
 
-.lancer-communicator-dialog .lcm-input-group button {
+.rpg_communications-overhaul-dialog .lcm-input-group button {
     height: 26px; /* Точно такая же высота как у инпута */
     padding: 0 10px;
     color: black;
@@ -62,27 +62,27 @@
     justify-content: center;
 }
 
-.lancer-communicator-dialog .lcm-input-group input {
+.rpg_communications-overhaul-dialog .lcm-input-group input {
     flex-grow: 1;
     height: 26px;
 }
 
-.lancer-communicator-dialog .lcm-input-group {
+.rpg_communications-overhaul-dialog .lcm-input-group {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.lancer-communicator-dialog input[type="range"] {
+.rpg_communications-overhaul-dialog input[type="range"] {
     flex-grow: 1;
 }
 
-.lancer-communicator-dialog #font-size-display {
+.rpg_communications-overhaul-dialog #font-size-display {
     width: 50px;
     text-align: right;
 }
 
-#lancer-communicator-message.top-screen {
+#rpg_communications-overhaul-message.top-screen {
     position: fixed;
     top: 90px;
     left: 30%;
@@ -92,7 +92,7 @@
     z-index: 1000;
 }
 
-#lancer-communicator-message .lcm-communicator-container {
+#rpg_communications-overhaul-message .lcm-communicator-container {
     width: 100%; /* Изменил на 100% */ 
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.8);
@@ -104,7 +104,7 @@
     position: relative; /* Для абсолютного позиционирования курсора */
 }
 
-#lancer-communicator-message .lcm-portrait-container {
+#rpg_communications-overhaul-message .lcm-portrait-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,7 +113,7 @@
     flex-shrink: 0; /* Запрещаем уменьшение контейнера */
 }
 
-#lancer-communicator-message .lcm-portrait {
+#rpg_communications-overhaul-message .lcm-portrait {
     width: 90px;
     height: 90px;
     object-fit: cover;
@@ -121,19 +121,19 @@
     flex-shrink: 0; /* Запрещаем уменьшение аватарки */
 }
 
-#lancer-communicator-message .lcm-message-text {
+#rpg_communications-overhaul-message .lcm-message-text {
     font-size: var(--message-font-size, 14px) !important; 
     flex-grow: 1;
     word-wrap: break-word;
     text-align: left; /* Выравнивание текста по левому краю */
 }
 
-#lancer-communicator-message .lcm-message-text,
-#lancer-communicator-message .lcm-character-name {
+#rpg_communications-overhaul-message .lcm-message-text,
+#rpg_communications-overhaul-message .lcm-character-name {
     font-family: var(--message-font, 'MOSCOW2024'), monospace;
 }
 
-#lancer-communicator-message .lcm-message-text::after {
+#rpg_communications-overhaul-message .lcm-message-text::after {
     content: '|';
     display: inline-block;
     animation: blink 0.7s infinite;
@@ -146,7 +146,7 @@
     50% { opacity: 1; }
 }
 
-#lancer-communicator-message, .lcm-portrait {
+#rpg_communications-overhaul-message, .lcm-portrait {
     border: 1px solid #03FB8D;
     box-shadow: 0 0 15px rgba(3, 251, 141, 0.8);
     backdrop-filter: blur(5px);
@@ -167,12 +167,12 @@
     }
 }
 
-#lancer-communicator-message.collapsing {
+#rpg_communications-overhaul-message.collapsing {
     animation: tv-collapse 5.0s ease-in forwards;
     transform-origin: center;
 }
 
-#lancer-communicator-message .lcm-character-name {
+#rpg_communications-overhaul-message .lcm-character-name {
     font-family: var(--message-font, 'MOSCOW2024'), monospace;
 	font-size: 20px;
     color: #03FB8D;
@@ -185,7 +185,7 @@
 }
 
 /* Базовый стиль */
-#lancer-communicator-message.style-green {
+#rpg_communications-overhaul-message.style-green {
     border: 1px solid #03FB8D;
     box-shadow: 0 0 15px rgba(3, 251, 141, 0.8);
     background-color: rgba(0, 255, 0, 0.1);
@@ -194,73 +194,73 @@
 }
 
 /* Синий стиль */
-#lancer-communicator-message.style-blue {
+#rpg_communications-overhaul-message.style-blue {
     border: 1px solid #00A4FF;
     box-shadow: 0 0 15px rgba(0, 164, 255, 0.8);
     background-color: rgba(0, 0, 255, 0.1);
     border-color: blue;
     color: #00A4FF;
 }
-#lancer-communicator-message.style-blue .lcm-message-text {
+#rpg_communications-overhaul-message.style-blue .lcm-message-text {
     color: #00A4FF;
 }
-#lancer-communicator-message.style-blue .lcm-character-name {
+#rpg_communications-overhaul-message.style-blue .lcm-character-name {
     color: #00A4FF;
 }
-#lancer-communicator-message.style-blue .lcm-portrait {
+#rpg_communications-overhaul-message.style-blue .lcm-portrait {
     border-color: #00A4FF;
     box-shadow: 0 0 10px rgba(0, 164, 255, 0.5);
 }
-#lancer-communicator-message.style-blue .lcm-message-text::after {
+#rpg_communications-overhaul-message.style-blue .lcm-message-text::after {
     color: #00A4FF;
 }
 
 /* Желтый стиль */
-#lancer-communicator-message.style-yellow {
+#rpg_communications-overhaul-message.style-yellow {
     border: 1px solid #FFD700;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
     background-color: rgba(255, 255, 0, 0.1);
     border-color: yellow;
     color: #FFD700;
 }
-#lancer-communicator-message.style-yellow .lcm-message-text {
+#rpg_communications-overhaul-message.style-yellow .lcm-message-text {
     color: #FFD700;
 }
-#lancer-communicator-message.style-yellow .lcm-character-name {
+#rpg_communications-overhaul-message.style-yellow .lcm-character-name {
     color: #FFD700;
 }
-#lancer-communicator-message.style-yellow .lcm-portrait {
+#rpg_communications-overhaul-message.style-yellow .lcm-portrait {
     border-color: #FFD700;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
-#lancer-communicator-message.style-yellow .lcm-message-text::after {
+#rpg_communications-overhaul-message.style-yellow .lcm-message-text::after {
     color: #FFD700;
 }
 
 /* Красный стиль */
-#lancer-communicator-message.style-red {
+#rpg_communications-overhaul-message.style-red {
     border: 1px solid #FF0000;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
     background-color: rgba(255, 0, 0, 0.1);
     border-color: red;
     color: #FF0000;
 }
-#lancer-communicator-message.style-red .lcm-message-text {
+#rpg_communications-overhaul-message.style-red .lcm-message-text {
     color: #FF0000;
 }
-#lancer-communicator-message.style-red .lcm-character-name {
+#rpg_communications-overhaul-message.style-red .lcm-character-name {
     color: #FF0000;
 }
-#lancer-communicator-message.style-red .lcm-portrait {
+#rpg_communications-overhaul-message.style-red .lcm-portrait {
     border-color: #FF0000;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
-#lancer-communicator-message.style-red .lcm-message-text::after {
+#rpg_communications-overhaul-message.style-red .lcm-message-text::after {
     color: #FF0000;
 }
 
 /* Поврежденный стиль с анимацией */
-#lancer-communicator-message.style-damaged {
+#rpg_communications-overhaul-message.style-damaged {
     border: 1px solid darkred;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
     color: darkred;
@@ -268,20 +268,20 @@
     border-color: maroon;
     animation: glitch-damage 0.3s forwards;
 }
-#lancer-communicator-message.style-damaged .lcm-message-text {
+#rpg_communications-overhaul-message.style-damaged .lcm-message-text {
     color: darkred;
     text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
 }
-#lancer-communicator-message.style-damaged .lcm-character-name {
+#rpg_communications-overhaul-message.style-damaged .lcm-character-name {
     color: darkred;
     text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.5);
 }
-#lancer-communicator-message.style-damaged .lcm-portrait {
+#rpg_communications-overhaul-message.style-damaged .lcm-portrait {
     border-color: darkred;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     transform: skew(-5deg);
 }
-#lancer-communicator-message.style-damaged .lcm-message-text::after {
+#rpg_communications-overhaul-message.style-damaged .lcm-message-text::after {
     color: darkred;
 }
 
@@ -338,24 +338,24 @@
     }
 }
 
-#lancer-communicator-message.style-damaged .lcm-communicator-container {
+#rpg_communications-overhaul-message.style-damaged .lcm-communicator-container {
     animation: shake-border 0.7s infinite;
     border: 2px solid darkred;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-#lancer-communicator-message.style-damaged .lcm-message-text {
+#rpg_communications-overhaul-message.style-damaged .lcm-message-text {
     position: relative;
     animation: text-glitch 0.6s infinite;
     color: #FF4444;
 }
 
-#lancer-communicator-message.style-damaged .lcm-character-name {
+#rpg_communications-overhaul-message.style-damaged .lcm-character-name {
     animation: text-glitch 0.6s infinite alternate;
     color: #FF2222;
 }
 
-#lancer-communicator-message.style-damaged .lcm-portrait {
+#rpg_communications-overhaul-message.style-damaged .lcm-portrait {
     animation: lcm-portrait-shake 0.30s infinite;
     filter: 
         contrast(120%) 
@@ -366,29 +366,51 @@
     transition: all 0.1s ease;
 }
 
-#lancer-communicator-message.style-damaged .lcm-portrait:hover {
+#rpg_communications-overhaul-message.style-damaged .lcm-portrait:hover {
     animation-play-state: paused;
 }
 
-#lancer-communicator-message.style-undertale {
+#rpg_communications-overhaul-message.style-undertale {
     border: 2px solid white;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     background-color: rgba(0, 0, 0, 0.95);
     color: white;
 }
-#lancer-communicator-message.style-undertale .lcm-message-text {
+#rpg_communications-overhaul-message.style-undertale .lcm-message-text {
     color: white;
 }
-#lancer-communicator-message.style-undertale .lcm-character-name {
+#rpg_communications-overhaul-message.style-undertale .lcm-character-name {
     color: white;
 }
-#lancer-communicator-message.style-undertale .lcm-portrait {
+#rpg_communications-overhaul-message.style-undertale .lcm-portrait {
     border-color: white;
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
 }
-#lancer-communicator-message.style-undertale .lcm-message-text::after {
+#rpg_communications-overhaul-message.style-undertale .lcm-message-text::after {
     color: white;
 }
+
+/* theme "floral" */
+
+#rpg_communications-overhaul-message.style-undertale {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url('../styles/images/floral_pattern.png');
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-undertale .lcm-message-text {
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-undertale .lcm-character-name {
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-undertale .lcm-portrait {
+    border-color: white;
+    box-shadow: 0 0 10px rgb(240, 110, 123);
+}
+#rpg_communications-overhaul-message.style-undertale .lcm-message-text::after {
+    color: rgb(0, 0, 0);
+}
+
 
 @keyframes lcm-shake-text {
     0% { transform: translateX(0) translateY(0); }

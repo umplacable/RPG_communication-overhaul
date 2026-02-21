@@ -16,9 +16,9 @@ export class LancerCommunicator {
     static initSocketListeners() {
         if (!game.socket) return;
 		
-        this.settings.voiceVolume = game.settings.get('lancer-communicator', 'voiceVolume') || 0.3;
+        this.settings.voiceVolume = game.settings.get('rpg_communications-overhaul', 'voiceVolume') || 0.3;
 
-        game.socket.on('module.lancer-communicator', (payload) => {
+        game.socket.on('module.rpg_communications-overhaul', (payload) => {
             if (payload?.type === 'showMessage' && payload.data?.characterName) {
                 this.showCommunicatorMessage(payload.data).catch(console.error);
             }
@@ -30,23 +30,23 @@ export class LancerCommunicator {
      */
     static async openCommunicatorSettings() {
         const selectedToken = canvas.tokens.controlled[0];
-        let lastPortrait = game.settings.get('lancer-communicator', 'lastPortrait');
-        let lastCharacterName = game.settings.get('lancer-communicator', 'lastCharacterName');
+        let lastPortrait = game.settings.get('rpg_communications-overhaul', 'lastPortrait');
+        let lastCharacterName = game.settings.get('rpg_communications-overhaul', 'lastCharacterName');
         if (selectedToken) {
             lastCharacterName = selectedToken.name; 
         }
-        const lastSound = game.settings.get('lancer-communicator', 'lastSound');
-		const lastVoiceover = game.settings.get('lancer-communicator', 'lastVoiceover');
-        const lastStyle = game.settings.get('lancer-communicator', 'lastMessageStyle');
-        const fontSize = game.settings.get('lancer-communicator', 'messageFontSize');
-        this.settings.typingSpeed = game.settings.get('lancer-communicator', 'typingSpeed') || 130;
-        this.settings.voiceVolume = game.settings.get('lancer-communicator', 'voiceVolume') || 0.3;
-        this.settings.fontFamily = game.settings.get('lancer-communicator', 'fontFamily') || 'MOSCOW2024';
+        const lastSound = game.settings.get('rpg_communications-overhaul', 'lastSound');
+		const lastVoiceover = game.settings.get('rpg_communications-overhaul', 'lastVoiceover');
+        const lastStyle = game.settings.get('rpg_communications-overhaul', 'lastMessageStyle');
+        const fontSize = game.settings.get('rpg_communications-overhaul', 'messageFontSize');
+        this.settings.typingSpeed = game.settings.get('rpg_communications-overhaul', 'typingSpeed') || 130;
+        this.settings.voiceVolume = game.settings.get('rpg_communications-overhaul', 'voiceVolume') || 0.3;
+        this.settings.fontFamily = game.settings.get('rpg_communications-overhaul', 'fontFamily') || 'MOSCOW2024';
 
         new Dialog({
             title: game.i18n.localize("LANCER.Settings.CommunicatorSettings"),
             content: `
-                <form class="lancer-communicator-dialog">
+                <form class="rpg_communications-overhaul-dialog">
                     <div class="lcm-form-group">
                         <label>${game.i18n.localize("LANCER.Settings.CharacterName")}</label>
                         <input type="text" id="character-name" value="${lastCharacterName || ''}" placeholder="${game.i18n.localize("LANCER.Settings.CharacterName")}">
@@ -115,6 +115,7 @@ export class LancerCommunicator {
                             <option value="red" ${lastStyle === 'red' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleRe")}</option>
                             <option value="damaged" ${lastStyle === 'damaged' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleDm")}</option>
                             <option value="undertale" ${lastStyle === 'undertale' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleUn") || "Undertale"}</option>
+                            <option value="undertale" ${lastStyle === 'floral' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleFlor") || "Florale"}</option>
                         </select>
                     </div>
                     <div id="style-preview" class="lcm-form-group">
@@ -152,11 +153,11 @@ export class LancerCommunicator {
                         }
 
                         // Сохраняем значения в настройках
-                        game.settings.set('lancer-communicator', 'lastCharacterName', characterName);
-                        game.settings.set('lancer-communicator', 'lastPortrait', portraitPath);
-                        game.settings.set('lancer-communicator', 'lastSound', soundPath);
-                        game.settings.set('lancer-communicator', 'lastMessageStyle', style);
-                        game.settings.set('lancer-communicator', 'fontFamily', fontFamily);
+                        game.settings.set('rpg_communications-overhaul', 'lastCharacterName', characterName);
+                        game.settings.set('rpg_communications-overhaul', 'lastPortrait', portraitPath);
+                        game.settings.set('rpg_communications-overhaul', 'lastSound', soundPath);
+                        game.settings.set('rpg_communications-overhaul', 'lastMessageStyle', style);
+                        game.settings.set('rpg_communications-overhaul', 'fontFamily', fontFamily);
 
                         // Отправляем сообщение
                         this.sendCommunicatorMessage(characterName, portraitPath, message, soundPath, voiceoverPath, style, fontSize, fontFamily);
@@ -379,6 +380,17 @@ export class LancerCommunicator {
                             previewContent.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)'; 
                             previewContent.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
                             break;
+                        case 'floral':
+                            previewContent.style.border= "none";
+                            previewContent.style.boxshadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+                            previewContent.style.backgroundcolor= "rgba(255, 255, 255, 0.5)";
+                            previewContent.style.backgroundimage= "url('../styles/images/floral_pattern.png')";
+                            previewContent.style.backgroundsize= "cover";
+                            previewContent.style.backgroundrepeat= "no-repeat";
+                            previewContent.style.color= "rgb(0, 0, 0)";
+
+
+                            break;
                     }
                     preview.appendChild(previewContent);
                 }
@@ -395,21 +407,21 @@ export class LancerCommunicator {
                     const fontSize = Number(formElement.querySelector('#font-size-input')?.value || 14);
                     // Сохраняем размер шрифта в настройках
                     if (!isNaN(fontSize) && fontSize >= 10 && fontSize <= 32) {
-                        game.settings.set('lancer-communicator', 'messageFontSize', fontSize)
+                        game.settings.set('rpg_communications-overhaul', 'messageFontSize', fontSize)
                             .catch(err => console.error('Error saving font size setting', err));
                     }
 					
                     const voiceVolumeInput = formElement.querySelector('#voice-volume');
                     if (voiceVolumeInput) {
                         const volume = parseFloat(voiceVolumeInput.value);
-                        game.settings.set('lancer-communicator', 'voiceVolume', volume)
+                        game.settings.set('rpg_communications-overhaul', 'voiceVolume', volume)
                             .catch(err => console.error('Error saving voice volume', err));
 
                         this.settings.voiceVolume = volume;
                     }
 
                     const voiceoverPath = formElement.querySelector('#voiceover-path').value;
-                    game.settings.set('lancer-communicator', 'lastVoiceover', voiceoverPath);
+                    game.settings.set('rpg_communications-overhaul', 'lastVoiceover', voiceoverPath);
                 }
             }
         }).render(true);
@@ -442,7 +454,7 @@ export class LancerCommunicator {
         // Показываем сообщение локально
         this.showCommunicatorMessage(messageData).catch(console.error);
         // Отправляем сообщение всем подключенным клиентам
-        game.socket.emit('module.lancer-communicator', {
+        game.socket.emit('module.rpg_communications-overhaul', {
             type: 'showMessage',
             data: messageData
         });
@@ -456,7 +468,7 @@ export class LancerCommunicator {
         const { characterName, portraitPath, message, soundPath, voiceoverPath, style, fontSize, fontFamily } = data;
     
 		// Удаляем существующее сообщение
-		const existingMessage = document.getElementById('lancer-communicator-message');
+		const existingMessage = document.getElementById('rpg_communications-overhaul-message');
 		if (existingMessage) {
 			return new Promise(resolve => {
 				// Удаляем предыдущее сообщение без анимации, чтобы избежать конфликтов
@@ -468,7 +480,7 @@ export class LancerCommunicator {
 
         // Создаем элементы DOM для сообщения
         const messageContainer = document.createElement('div');
-        messageContainer.id = 'lancer-communicator-message';
+        messageContainer.id = 'rpg_communications-overhaul-message';
         messageContainer.className = `top-screen style-${style || 'green'}`;
         
         // Создаем внутреннюю структуру сообщения
@@ -502,7 +514,7 @@ export class LancerCommunicator {
         let soundInstance = null;
         if (voiceoverPath) {
 			try {
-				const volume = game.settings.get('lancer-communicator', 'voiceVolume') || 0.3;
+				const volume = game.settings.get('rpg_communications-overhaul', 'voiceVolume') || 0.3;
 				voiceoverInstance = new Audio(voiceoverPath);
 				voiceoverInstance.volume = volume + 0.2;
 				
@@ -574,7 +586,7 @@ export class LancerCommunicator {
                             span.textContent = currentChar;
 											
                             // Добавляем класс тряски только если включено в настройках
-                            const shakeEnabled = game.settings.get('lancer-communicator', 'enableTextShake');
+                            const shakeEnabled = game.settings.get('rpg_communications-overhaul', 'enableTextShake');
                             if (shakeEnabled) {
                                 span.classList.add('lcm-shake-text');
                             }
@@ -592,7 +604,7 @@ export class LancerCommunicator {
 					if (voiceoverPath) {
 						// Не воспроизводим звук для каждого символа
 					} else if (soundInstance && !/[\s\.,!?;:-]/.test(currentChar)) {
-						const volume = game.settings.get('lancer-communicator', 'voiceVolume') || 0.3;
+						const volume = game.settings.get('rpg_communications-overhaul', 'voiceVolume') || 0.3;
 						const randomPitch = 0.85 + (Math.random() * 0.3);
 
 						// Останавливаем предыдущий звук, если он есть
@@ -677,7 +689,7 @@ export class LancerCommunicator {
                         // Форматируем параметры для макроса
                         const commandText = `
                             // Созданный макрос коммуникатора Lancer
-                            game.modules.get('lancer-communicator').api.sendCommunicatorMessage(
+                            game.modules.get('rpg_communications-overhaul').api.sendCommunicatorMessage(
                                 "${characterName}",
                                 "${portraitPath}",
                                 "${message.replace(/"/g, '\\"')}",
@@ -774,7 +786,7 @@ export class LancerCommunicator {
                             });
                             // Если сообщение введено, отправляем его
                             if (messageText && messageText.trim()) {
-                                game.modules.get('lancer-communicator').api.sendCommunicatorMessage(
+                                game.modules.get('rpg_communications-overhaul').api.sendCommunicatorMessage(
                                     "${characterName}",
                                     "${portraitPath}",
                                     messageText,

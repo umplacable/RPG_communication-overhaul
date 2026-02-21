@@ -10,7 +10,7 @@ Hooks.once('init', () => {
 
     // === ДОБАВЛЕНИЕ КНОПКИ В ИНСТРУМЕНТЫ ТОКЕНОВ (v12 + v13) ===
     Hooks.on('getSceneControlButtons', (controls) => {
-        const allowPlayersAccess = game.settings.get('lancer-communicator', 'allowPlayersAccess');
+        const allowPlayersAccess = game.settings.get('rpg_communications-overhaul', 'allowPlayersAccess');
         if (!game.user.isGM && !allowPlayersAccess) return;
 
         // Определяем, используется ли Foundry v13+
@@ -67,8 +67,8 @@ Hooks.once('ready', () => {
         game.i18n.has("LANCER.Settings.Communicator"));
 
     try {
-        const fontSize = game.settings.get('lancer-communicator', 'messageFontSize') || 14;
-        const fontFamily = game.settings.get('lancer-communicator', 'communicatorFont') || 'MOSCOW2024';
+        const fontSize = game.settings.get('rpg_communications-overhaul', 'messageFontSize') || 14;
+        const fontFamily = game.settings.get('rpg_communications-overhaul', 'communicatorFont') || 'MOSCOW2024';
         document.documentElement.style.setProperty('--message-font-size', `${fontSize}px`);
         document.documentElement.style.setProperty('--message-font', fontFamily);
     } catch (error) {

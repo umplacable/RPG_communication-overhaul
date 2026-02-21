@@ -6,5 +6,5 @@ export function registerAPI() {
     sendCommunicatorMessage: LancerCommunicator.sendCommunicatorMessage.bind(LancerCommunicator)
   };
   
-  game.modules.get('lancer-communicator').api = api;
+  game.modules.get('rpg_communications-overhaul').api = api;
 }
