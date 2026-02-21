@@ -397,7 +397,7 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     background-color: rgba(255, 255, 255, 0.5);
     background-image: url('../styles/images/floral_pattern.png');
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: rgb(0, 0, 0);
 }
@@ -419,6 +419,63 @@
     background-color: rgba(0, 0, 0, 0.0);
 }
 
+/* theme "rose_gold" */
+
+#rpg_communications-overhaul-message.style-rose_gold {
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.25);
+    background-image: url('../styles/images/rose_and_gold_patern.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-rose_gold .lcm-message-text {
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-rose_gold .lcm-character-name {
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-rose_gold .lcm-portrait {
+    border-color: white;
+    box-shadow: 0 0 10px rgb(245, 200, 40);
+}
+#rpg_communications-overhaul-message.style-rose_gold .lcm-message-text::after {
+    color: rgba(0, 0, 0, 0);
+}
+
+#rpg_communications-overhaul-message.style-rose_gold > .lcm-communicator-container{
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* theme "shattered_ice" */
+
+#rpg_communications-overhaul-message.style-shattered_ice {
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.25);
+    background-image: url('../styles/images/shattered_ice.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-shattered_ice .lcm-message-text {
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-shattered_ice .lcm-character-name {
+    color: rgb(0, 0, 0);
+}
+#rpg_communications-overhaul-message.style-shattered_ice .lcm-portrait {
+    border-color: white;
+    box-shadow: 0 0 10px rgb(163, 234, 255);
+}
+#rpg_communications-overhaul-message.style-shattered_ice .lcm-message-text::after {
+    color: rgba(0, 0, 0, 0);
+}
+
+#rpg_communications-overhaul-message.style-shattered_ice > .lcm-communicator-container{
+    background-color: rgba(0, 0, 0, 0.0);
+}
 
 @keyframes lcm-shake-text {
     0% { transform: translateX(0) translateY(0); }

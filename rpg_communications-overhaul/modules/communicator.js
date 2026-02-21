@@ -116,6 +116,8 @@ export class LancerCommunicator {
                             <option value="damaged" ${lastStyle === 'damaged' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleDm")}</option>
                             <option value="undertale" ${lastStyle === 'undertale' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleUn") || "Undertale"}</option>
                             <option value="floral" ${lastStyle === 'floral' ? 'selected' : ''}>Floral</option>
+                            <option value="rose_gold" ${lastStyle === 'rose_gold' ? 'selected' : ''}>Rose Gold</option>
+                            <option value="shattered_ice" ${lastStyle === 'shattered_ice' ? 'selected' : ''}>Shattered Ice</option>
                         </select>
                     </div>
                     <div id="style-preview" class="lcm-form-group">
@@ -385,7 +387,25 @@ export class LancerCommunicator {
                             previewContent.style.boxshadow = "0 0 10px rgba(255, 255, 255, 0.5)";
                             previewContent.style.backgroundcolor= "rgba(255, 255, 255, 0.5)";
                             previewContent.style.backgroundimage= "url('../styles/images/floral_pattern.png')";
-                            previewContent.style.backgroundsize= "cover";
+                            previewContent.style.backgroundsize= "100% 100%";
+                            previewContent.style.backgroundrepeat= "no-repeat";
+                            previewContent.style.color= "rgb(0, 0, 0)";
+                            break;
+                        case 'rose_gold':
+                            previewContent.style.border= "none";
+                            previewContent.style.boxshadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+                            previewContent.style.backgroundcolor= "rgba(255, 255, 255, 0.25)";
+                            previewContent.style.backgroundimage= "url('../styles/images/rose_and_gold_patern.png')";
+                            previewContent.style.backgroundsize= "100% 100%";
+                            previewContent.style.backgroundrepeat= "no-repeat";
+                            previewContent.style.color= "rgb(0, 0, 0)";
+                            break;
+                        case 'shattered_ice':
+                            previewContent.style.border= "none";
+                            previewContent.style.boxshadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+                            previewContent.style.backgroundcolor= "rgba(255, 255, 255, 0.25)";
+                            previewContent.style.backgroundimage= "url('../styles/images/shattered_ice.png')";
+                            previewContent.style.backgroundsize= "100% 100%";
                             previewContent.style.backgroundrepeat= "no-repeat";
                             previewContent.style.color= "rgb(0, 0, 0)";
                             break;
