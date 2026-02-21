@@ -392,23 +392,31 @@
 
 /* theme "floral" */
 
-#rpg_communications-overhaul-message.style-undertale {
+#rpg_communications-overhaul-message.style-floral {
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     background-color: rgba(255, 255, 255, 0.5);
     background-image: url('../styles/images/floral_pattern.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     color: rgb(0, 0, 0);
 }
-#rpg_communications-overhaul-message.style-undertale .lcm-message-text {
+#rpg_communications-overhaul-message.style-floral .lcm-message-text {
     color: rgb(0, 0, 0);
 }
-#rpg_communications-overhaul-message.style-undertale .lcm-character-name {
+#rpg_communications-overhaul-message.style-floral .lcm-character-name {
     color: rgb(0, 0, 0);
 }
-#rpg_communications-overhaul-message.style-undertale .lcm-portrait {
+#rpg_communications-overhaul-message.style-floral .lcm-portrait {
     border-color: white;
     box-shadow: 0 0 10px rgb(240, 110, 123);
 }
-#rpg_communications-overhaul-message.style-undertale .lcm-message-text::after {
-    color: rgb(0, 0, 0);
+#rpg_communications-overhaul-message.style-floral .lcm-message-text::after {
+    color: rgba(0, 0, 0, 0);
+}
+
+#rpg_communications-overhaul-message.style-floral > .lcm-communicator-container{
+    background-color: rgba(0, 0, 0, 0.0);
 }
 
 

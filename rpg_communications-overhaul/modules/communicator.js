@@ -388,8 +388,6 @@ export class LancerCommunicator {
                             previewContent.style.backgroundsize= "cover";
                             previewContent.style.backgroundrepeat= "no-repeat";
                             previewContent.style.color= "rgb(0, 0, 0)";
-
-
                             break;
                     }
                     preview.appendChild(previewContent);
