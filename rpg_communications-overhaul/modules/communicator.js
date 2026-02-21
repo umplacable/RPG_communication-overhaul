@@ -115,7 +115,7 @@ export class LancerCommunicator {
                             <option value="red" ${lastStyle === 'red' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleRe")}</option>
                             <option value="damaged" ${lastStyle === 'damaged' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleDm")}</option>
                             <option value="undertale" ${lastStyle === 'undertale' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleUn") || "Undertale"}</option>
-                            <option value="undertale" ${lastStyle === 'floral' ? 'selected' : ''}>${game.i18n.localize("LANCER.Settings.MSGStyleFlor") || "Florale"}</option>
+                            <option value="floral" ${lastStyle === 'floral' ? 'selected' : ''}>Floral</option>
                         </select>
                     </div>
                     <div id="style-preview" class="lcm-form-group">
