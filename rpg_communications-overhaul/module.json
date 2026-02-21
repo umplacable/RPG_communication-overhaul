@@ -1,9 +1,9 @@
 {
     "id": "rpg_communications-overhaul",
     "name": "rpg_communications-overhaul",
-    "title": "Lancer Communicator",
-    "description": "NPC Communicator for Lancer RPG | Коммуникатор NPC для Lancer RPG",
-    "version": "0.6.5.1",
+    "title": "RPG Communications Overhaul",
+    "description": "NPC Communicator like RPG dialogs",
+    "version": "0.1.0.0",
 	"languages": [
         {
             "lang": "en",
@@ -24,13 +24,13 @@
 	},
     "authors": [
         {
-            "name": "KamiliaBlow"
+            "name": "Umplacable"
         }
     ],
     "esmodules": ["modules/main.js"],
     "socket": true,
     "styles": ["styles/rpg_communications-overhaul.css"],
     "url": "https://github.com/umplacable/RPG_communication-overhaul",
-    "manifest": "https://raw.githubusercontent.com/KamiliaBlow/Lancer-communication-module/main/rpg_communications-overhaul/module.json",
-    "download": "https://github.com/KamiliaBlow/Lancer-communication-module/archive/refs/tags/v0.6.5.1.zip"
+    "manifest": "https://raw.githubusercontent.com/umplacable/RPG_communication-overhaul/refs/heads/main/rpg_communications-overhaul/module.json",
+    "download": ""
 }
