@@ -3,7 +3,7 @@
     "name": "rpg_communications-overhaul",
     "title": "RPG Communications Overhaul",
     "description": "NPC Communicator like RPG dialogs",
-    "version": "0.1.0.0",
+    "version": "0.1.0.2",
 	"languages": [
         {
             "lang": "en",
@@ -32,5 +32,5 @@
     "styles": ["styles/rpg_communications-overhaul.css"],
     "url": "https://github.com/umplacable/RPG_communication-overhaul",
     "manifest": "https://raw.githubusercontent.com/umplacable/RPG_communication-overhaul/refs/heads/main/rpg_communications-overhaul/module.json",
-    "download": "https://github.com/umplacable/RPG_communication-overhaul/archive/refs/tags/0.1.0.0.zip"
+    "download": "https://github.com/umplacable/RPG_communication-overhaul/archive/refs/tags/0.1.0.2.zip"
 }
