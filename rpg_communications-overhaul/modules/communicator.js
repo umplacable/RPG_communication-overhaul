@@ -33,7 +33,8 @@ export class LancerCommunicator {
         let lastPortrait = game.settings.get('rpg_communications-overhaul', 'lastPortrait');
         let lastCharacterName = game.settings.get('rpg_communications-overhaul', 'lastCharacterName');
         if (selectedToken) {
-            lastCharacterName = selectedToken.name; 
+            lastCharacterName = selectedToken.name;
+            lastPortrait = selectedToken.document.texture.src;
         }
         const lastSound = game.settings.get('rpg_communications-overhaul', 'lastSound');
 		const lastVoiceover = game.settings.get('rpg_communications-overhaul', 'lastVoiceover');
